@@ -43,20 +43,21 @@ interface VehicleBoxProps extends VehicleObject {
   defaultChecked: boolean;
 }
 
-const VehicleBox: React.FC<VehicleBoxProps> = ({
-  id,
-  fuelType,
-  fuelTypeOptions,
-  usageOptions,
-  index,
-  // register,
-  // control,
-  // setValue,
-  // errors,
-  onDelete,
-  defaultType,
-  defaultChecked,
-}) => {
+const VehicleBox = React.forwardRef<HTMLDivElement, VehicleBoxProps>((props, ref) => {
+  const {
+    id,
+    fuelType,
+    fuelTypeOptions,
+    usageOptions,
+    index,
+    // register,
+    // control,
+    // setValue,
+    // errors,
+    onDelete,
+    defaultType,
+    defaultChecked,
+  } = props;
   const theme = useTheme();
   // const { setValue } = useForm();
   // const { setValue, getValues, control } = useFormContext();
@@ -102,6 +103,7 @@ const VehicleBox: React.FC<VehicleBoxProps> = ({
 
   return (
     <Box
+      ref={ref}  
       className="VehicleBox"
       sx={{
         padding: "1rem 1rem",
@@ -281,12 +283,9 @@ const VehicleBox: React.FC<VehicleBoxProps> = ({
                 {switchToEVText}
               </SwitchLabel>
               <Controller
-                // name={`vehicleObjs.${index}.switchToEV`}
+                name={`vehicleObjs.${index}.switchToEV`}
                 control={control}
                 defaultValue={defaultChecked}
-                {...register(`vehicleObjs.${index}.switchToEV`, {
-                  required: true,
-                })}
                 render={({ field }) => (
                   <HouseSwitch
                     size="small"
@@ -399,6 +398,6 @@ const VehicleBox: React.FC<VehicleBoxProps> = ({
       </Box>
     </Box >
   );
-};
+});
 
 export default VehicleBox;
