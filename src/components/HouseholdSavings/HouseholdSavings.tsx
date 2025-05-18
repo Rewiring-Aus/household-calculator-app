@@ -249,7 +249,8 @@ const HouseholdSavings: React.FC<SavingsProps> = ({
                       marginLeft: "0.3rem",
                       maxWidth: "15px",
                       maxHeight: "15px",
-                      stroke: "currentColor",
+                      stroke: "white",
+                      fill: "none"
                     }}
                   />
                 </Link>
