@@ -13,7 +13,7 @@ import {
 } from "src/shared/api/openapi-client";
 
 export const defaultHouseholdData: Household = {
-  location: LocationEnum.AucklandNorth,
+  location: LocationEnum.NewSouthWales,
   occupancy: 2,
   spaceHeating: SpaceHeatingEnum.ElectricHeatPump,
   waterHeating: WaterHeatingEnum.ElectricResistance,
@@ -47,7 +47,7 @@ export const defaultHouseholdData: Household = {
 // This reflects the UI
 
 export const defaultFormState: HouseholdFormState = {
-  location: defaultHouseholdData.location || LocationEnum.AucklandNorth,
+  location: defaultHouseholdData.location || LocationEnum.NewSouthWales,
   occupancy: defaultHouseholdData.occupancy || 2,
   spaceHeating:
     defaultHouseholdData.spaceHeating || SpaceHeatingEnum.ElectricHeatPump,
