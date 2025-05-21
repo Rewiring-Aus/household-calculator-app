@@ -98,7 +98,7 @@ const HouseholdSavings: React.FC<SavingsProps> = ({
   const recommendationKey = results?.recommendation?.action;
   const recommendationURL = results?.recommendation?.url || "";
   const allGuidesURL =
-    "https://www.rewiring.nz/electrification-guides/get-started";
+    "https://www.rewiringaustralia.org/research-and-resources";
   const { getDescription, buttonText, imageComponent } = recommendationKey
     ? recommendationActions[recommendationKey]
     : { getDescription: () => "", buttonText: "", imageComponent: "" };

@@ -1,4 +1,4 @@
 // ----------------- External Links -------------------
 
 export const electricVehicleURL =
-  "https://www.rewiring.nz/electrification-guides/electric-cars";
+  "https://www.rewiringaustralia.org/report/factsheet-for-electric-vehicles";
