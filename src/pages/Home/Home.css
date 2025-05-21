@@ -13,7 +13,7 @@
   flex-shrink: 1;       /* allow it to shrink when needed */
   flex-grow: 0;         /* don’t let it grow unnecessarily */
   flex-basis: auto;     /* size based on content by default */
-  max-width: 200px;     
+  max-width: 180px;
 }
 
 .rewiring-logo-mobile {
