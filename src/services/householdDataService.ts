@@ -5,7 +5,7 @@ import {
 } from "src/assets/data/householdDefaults";
 import { Household, Savings } from "src/shared/api/openapi-client";
 
-let householdSavingsAPI_URL = "https://household-model.onrender.com/savings";
+let householdSavingsAPI_URL = "https://household-model-d4u6.onrender.com/savings";
 
 if (process.env.NODE_ENV === "development") {
   householdSavingsAPI_URL = "http://127.0.0.1:8000/savings";
