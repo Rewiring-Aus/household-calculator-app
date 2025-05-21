@@ -1,10 +1,7 @@
 .Home-logos {
-  margin-bottom: 1.2rem;
-  height: 64px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* or center / flex-start */
+  gap: 1rem;
 }
 
 .Home-logo {
@@ -13,14 +10,19 @@
 }
 
 #rewiring-logo-container {
-  margin: auto 1.5rem auto 0;
+  flex-shrink: 1;       /* allow it to shrink when needed */
+  flex-grow: 0;         /* don’t let it grow unnecessarily */
+  flex-basis: auto;     /* size based on content by default */
+  max-width: 200px;     
 }
 
 .rewiring-logo-mobile {
-  max-width: 48vw;
+  max-width: 40vw;
 }
 .rewiring-logo-desktop {
-  max-width: 38vw;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .asb-logo-container {
@@ -34,18 +36,6 @@
   flex-direction: row;
 }
 
-#asb-logo-label.asb-logo-label-mobile {
-  margin-bottom: 4px;
-  font-size: 0.8rem;
-}
-#asb-logo-label.asb-logo-label-desktop {
-  margin-right: 20px;
-  font-size: 0.9rem;
-}
-
-#asb-logo {
-  height: 20px;
-}
 #Home-logo-keyline {
   border-color: black;
   height: 80%;

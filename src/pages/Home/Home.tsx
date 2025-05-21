@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import rewiringLogo from "../../assets/logos/rewiring_full_logo.svg";
-import asbLogo from "../../assets/logos/asb_logo.svg";
+import rewiringLogo from "../../assets/logos/rewiring_australia_full_logo.png";
 import { useTheme } from "@mui/material/styles";
 import HouseholdForm from "../../components/HouseholdForm/HouseholdForm";
 import HouseholdSavings from "../../components/HouseholdSavings/HouseholdSavings";
@@ -133,46 +132,20 @@ const Home: React.FC = () => {
           <Box className="Home-logos">
             <Box id="rewiring-logo-container">
               <Link
-                href="https://rewiring.nz/"
-                aria-label="Go to Rewiring Aotearoa home page"
+                href="https://www.rewiringaustralia.org/"
+                aria-label="Go to Rewiring Australia home page"
               >
                 <img
                   src={rewiringLogo}
                   className={`Home-logo ${isMobile ? "rewiring-logo-mobile" : "rewiring-logo-desktop"}`}
-                  alt="Rewiring Aotearoa logo"
+                  alt="Rewiring Australia logo"
                 />
               </Link>
-            </Box>
-            <Box
-              className={`asb-logo-container ${isMobile ? "asb-logo-container-mobile" : "asb-logo-container-desktop"}`}
-            >
-              <Typography
-                variant="body2"
-                id="asb-logo-label"
-                className={`${isMobile ? "asb-logo-label-mobile" : "asb-logo-label-desktop"}`}
-              >
-                Supported by
-              </Typography>
-              <img
-                src={asbLogo}
-                className={`Home-logo ${isMobile ? "asb-logo-mobile" : "asb-logo-desktop"}`}
-                id="asb-logo"
-                alt="ASB logo"
-              />
             </Box>
           </Box>
 
           <Typography
             variant="h1"
-            sx={{
-              marginTop: "0.8rem",
-              [theme.breakpoints.up("md")]: {
-                marginTop: "1.8rem",
-              },
-              [theme.breakpoints.up("lg")]: {
-                marginTop: "3.6rem",
-              },
-            }}
           >
             How much could you save by going electric?
           </Typography>
@@ -184,14 +157,14 @@ const Home: React.FC = () => {
           </Typography>
 
           <Typography
-          variant="body2"
-          sx={{
-            fontSize: "0.5rem",
-            lineHeight: "0.5rem",
-            fontStyle: "italic"
-          }}
+            variant="body2"
+            sx={{
+              fontSize: "0.5rem",
+              lineHeight: "0.5rem",
+              fontStyle: "italic"
+            }}
           >
-          The legal bit - Rewiring Aotearoa disclaims and excludes all liability for any claim, loss, demand or damages of any kind whatsoever (including for negligence) arising out of or in connection with the use of either this website or the tools, information, content or materials included on this site or on any website we link to.
+            The legal bit - Rewiring Australia disclaims and excludes all liability for any claim, loss, demand or damages of any kind whatsoever (including for negligence) arising out of or in connection with the use of either this website or the tools, information, content or materials included on this site or on any website we link to.
           </Typography>
 
           {householdData && (
@@ -225,12 +198,12 @@ const Home: React.FC = () => {
             >
               © Copyright{" "}
               <Link
-                href="https://rewiring.nz/"
-                aria-label="Go to Rewiring Aotearoa home page"
+                href="https://www.rewiringaustralia.org/"
+                aria-label="Go to Rewiring Australia home page"
               >
-                Rewiring Aotearoa
+                Rewiring Australia
               </Link>{" "}
-              2024
+              2025
             </Typography>
           </Box>
           {/* ------------------------------------------------------------------ */}
