@@ -29,6 +29,7 @@ import {
   Vehicle,
   VehicleFuelTypeEnum,
   WaterHeatingEnum,
+  Savings,
 } from "../../shared/api/openapi-client";
 import {
   HouseholdFormState,
@@ -74,11 +75,13 @@ import { defaultFormState } from "src/assets/data/householdDefaults";
 interface HouseholdFormProps {
   householdData: Household;
   updateHouseholdData: (data: Household) => void;
+  savingsData?: Savings;
 }
 
 const HouseholdForm: React.FC<HouseholdFormProps> = ({
   householdData,
   updateHouseholdData,
+  savingsData,
 }) => {
   const theme = useTheme();
 
@@ -111,7 +114,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
       battery: {
         hasBattery: Boolean(
           householdData?.battery?.hasBattery ??
-            defaultFormData.battery.hasBattery,
+          defaultFormData.battery.hasBattery,
         ),
         capacity:
           householdData?.battery?.capacity ?? defaultFormData.battery.capacity,
@@ -154,7 +157,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
     }
   }, [watchInstallSolar]);
 
-  useEffect(() => {}, [solarSize]);
+  useEffect(() => { }, [solarSize]);
 
   // -------------------------------------------------------------------
   // battery state
@@ -176,10 +179,10 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
     updateFormData(getValues());
   }, [watchInstallBattery]);
 
-  useEffect(() => {}, [batteryCapacity]);
+  useEffect(() => { }, [batteryCapacity]);
 
   // ----------------- useHouseholdData useEffect -------------------
-  React.useEffect(() => {}, [householdData]);
+  React.useEffect(() => { }, [householdData]);
 
   // ----------------- Manage the number of vehicles -------------------
 
@@ -331,7 +334,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
     setSolarSize(defaultFormData.solar.size);
   };
 
-  const onSubmit = (formData: Household) => {};
+  const onSubmit = (formData: Household) => { };
 
   // ------------------------------------
   return (
@@ -540,7 +543,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                       backgroundColor:
                         watchAllFields.spaceHeating !==
                           SpaceHeatingEnum.ElectricHeatPump &&
-                        watchAllFields.spaceHeating !==
+                          watchAllFields.spaceHeating !==
                           SpaceHeatingEnum.ElectricResistance
                           ? theme.palette.warning.light
                           : theme.palette.success.light,
@@ -566,23 +569,23 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                 {watchAllFields.spaceHeating !==
                   SpaceHeatingEnum.ElectricHeatPump &&
                   watchAllFields.spaceHeating !==
-                    SpaceHeatingEnum.ElectricResistance && (
+                  SpaceHeatingEnum.ElectricResistance && (
                     <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
                       🔧 Upgrading to electric heat pumps
                     </FormHelperText>
                   )}
                 {watchAllFields.spaceHeating ===
                   SpaceHeatingEnum.ElectricHeatPump && (
-                  <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
-                    {electrificationStatusMapping.alreadyMostEfficient}
-                  </FormHelperText>
-                )}
+                    <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
+                      {electrificationStatusMapping.alreadyMostEfficient}
+                    </FormHelperText>
+                  )}
                 {watchAllFields.spaceHeating ===
                   SpaceHeatingEnum.ElectricResistance && (
-                  <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
-                    {electrificationStatusMapping.alreadyElectricButWillUpgrade}
-                  </FormHelperText>
-                )}
+                    <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
+                      {electrificationStatusMapping.alreadyElectricButWillUpgrade}
+                    </FormHelperText>
+                  )}
               </FormControl>
 
               <FormControl
@@ -622,10 +625,10 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                       backgroundColor:
                         watchAllFields.waterHeating !==
                           WaterHeatingEnum.ElectricHeatPump &&
-                        watchAllFields.waterHeating !==
+                          watchAllFields.waterHeating !==
                           WaterHeatingEnum.ElectricResistance &&
                           watchAllFields.waterHeating !==
-                            WaterHeatingEnum.Solar
+                          WaterHeatingEnum.Solar
                           ? theme.palette.warning.light
                           : theme.palette.success.light,
                     },
@@ -650,7 +653,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                 {watchAllFields.waterHeating !==
                   WaterHeatingEnum.ElectricHeatPump &&
                   watchAllFields.waterHeating !==
-                    WaterHeatingEnum.ElectricResistance &&
+                  WaterHeatingEnum.ElectricResistance &&
                   watchAllFields.waterHeating !== WaterHeatingEnum.Solar && (
                     <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
                       🔧 Upgrading to electric water heat pump
@@ -658,16 +661,16 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                   )}
                 {watchAllFields.waterHeating ===
                   WaterHeatingEnum.ElectricHeatPump && (
-                  <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
-                    ⚡️ Already the most efficient option!
-                  </FormHelperText>
-                )}
+                    <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
+                      ⚡️ Already the most efficient option!
+                    </FormHelperText>
+                  )}
                 {watchAllFields.waterHeating ===
                   WaterHeatingEnum.ElectricResistance && (
-                  <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
-                    {electrificationStatusMapping.alreadyElectric}
-                  </FormHelperText>
-                )}
+                    <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
+                      {electrificationStatusMapping.alreadyElectric}
+                    </FormHelperText>
+                  )}
                 {watchAllFields.waterHeating === WaterHeatingEnum.Solar && (
                   <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
                     🌱 Already zero emissions
@@ -706,7 +709,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                       backgroundColor:
                         watchAllFields.cooktop !==
                           CooktopEnum.ElectricInduction &&
-                        watchAllFields.cooktop !==
+                          watchAllFields.cooktop !==
                           CooktopEnum.ElectricResistance
                           ? theme.palette.warning.light
                           : theme.palette.success.light,
@@ -1318,6 +1321,79 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                   />
                 ),
               )}
+            </FormSectionGrid>
+          </FormBox>
+          <FormBox theme={theme} className="formBox">
+            <FDivider />
+            <Typography variant="h3" sx={{ marginBottom: "1rem" }}>Annual Opex Costs</Typography>
+            <FormSectionGrid
+              theme={theme}
+              sx={{
+                backgroundColor: theme.palette.background.paper,
+                padding: "1rem",
+                borderRadius: "4px",
+                marginBottom: "1rem",
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "1rem",
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>Before</Typography>
+              <Typography>Grid Volume Costs</Typography>
+              <Typography>Other Energy Costs</Typography>
+              <Typography>Fixed Costs</Typography>
+              <Typography>Solar Export Revenue</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.gridVolumeCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.otherEnergyCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.fixedCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
+              <Typography />
+              <Typography>
+                <Typography>Natural gas: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>LPG: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                <Typography>Wood: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
+                <Typography>Petrol: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
+                <Typography>Diesel: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
+              </Typography>
+              <Typography>
+                <Typography>Natural gas: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>LPG: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                <Typography>Electricity: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
+              </Typography>
+            </FormSectionGrid>
+            <FormSectionGrid
+              theme={theme}
+              sx={{
+                backgroundColor: theme.palette.background.paper,
+                padding: "1rem",
+                borderRadius: "4px",
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "1rem",
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>After</Typography>
+              <Typography>Grid Volume Costs</Typography>
+              <Typography>Other Energy Costs</Typography>
+              <Typography>Fixed Costs</Typography>
+              <Typography>Solar Export Revenue</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.gridVolumeCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.otherEnergyCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.fixedCosts || 0) / 100) * 100}</Typography>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
+              <Typography />
+              <Typography>
+                <Typography>Natural gas: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>LPG: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                <Typography>Wood: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
+                <Typography>Petrol: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
+                <Typography>Diesel: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
+              </Typography>
+              <Typography>
+                <Typography>Natural gas: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>LPG: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                <Typography>Electricity: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
+              </Typography>
             </FormSectionGrid>
           </FormBox>
         </FormContainer>
