@@ -171,6 +171,7 @@ const Home: React.FC = () => {
             <HouseholdForm
               householdData={householdData}
               updateHouseholdData={updateHouseholdData}
+              savingsData={savingsData}
             />
           )}
 

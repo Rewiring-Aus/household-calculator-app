@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 apis/SavingsApi.ts
 apis/index.ts
 index.ts
@@ -10,6 +9,9 @@ models/Household.ts
 models/LocationEnum.ts
 models/Opex.ts
 models/OpexValues.ts
+models/OpexWeekly.ts
+models/OpexWeeklyFixedCostsByFuelType.ts
+models/OpexWeeklyOtherEnergyCostsByFuelType.ts
 models/Recommendation.ts
 models/RecommendationActionEnum.ts
 models/Savings.ts
