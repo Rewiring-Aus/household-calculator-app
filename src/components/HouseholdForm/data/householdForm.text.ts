@@ -37,6 +37,7 @@ export const spaceHeatingMapping: Record<SpaceHeatingEnum, string> = {
   [SpaceHeatingEnum.Gas]: "Piped/natural gas heater",
   [SpaceHeatingEnum.Lpg]: "Bottled LPG heater",
   [SpaceHeatingEnum.Diesel]: "Diesel boiler",
+  [SpaceHeatingEnum.None]: "No heating",
 };
 
 export const waterHeatingMapping: Record<WaterHeatingEnum, string> = {
