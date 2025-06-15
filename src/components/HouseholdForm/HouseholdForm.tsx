@@ -544,7 +544,9 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                         watchAllFields.spaceHeating !==
                           SpaceHeatingEnum.ElectricHeatPump &&
                           watchAllFields.spaceHeating !==
-                          SpaceHeatingEnum.ElectricResistance
+                          SpaceHeatingEnum.ElectricResistance &&
+                          watchAllFields.spaceHeating !==
+                          SpaceHeatingEnum.None
                           ? theme.palette.warning.light
                           : theme.palette.success.light,
                     },
@@ -569,13 +571,15 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
                 {watchAllFields.spaceHeating !==
                   SpaceHeatingEnum.ElectricHeatPump &&
                   watchAllFields.spaceHeating !==
-                  SpaceHeatingEnum.ElectricResistance && (
+                  SpaceHeatingEnum.ElectricResistance &&
+                  watchAllFields.spaceHeating !==
+                  SpaceHeatingEnum.None && (
                     <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
                       🔧 Upgrading to electric heat pumps
                     </FormHelperText>
                   )}
-                {watchAllFields.spaceHeating ===
-                  SpaceHeatingEnum.ElectricHeatPump && (
+                {(watchAllFields.spaceHeating === SpaceHeatingEnum.ElectricHeatPump ||
+                  watchAllFields.spaceHeating === SpaceHeatingEnum.None) && (
                     <FormHelperText sx={{ marginLeft: 0, marginRight: 0 }}>
                       {electrificationStatusMapping.alreadyMostEfficient}
                     </FormHelperText>
