@@ -25,8 +25,6 @@ export const locationMapping: Record<LocationEnum, string> = {
   [LocationEnum.WesternAustralia]: "Western Australia",
   [LocationEnum.NorthernTerritory]: "Northern Territory",
   [LocationEnum.AustralianCapitalTerritory]: "Australian Capital Territory",
-  [LocationEnum.OtherTerritories]: "Other Territories",
-  [LocationEnum.Overseas]: "Overseas",
   [LocationEnum.Tasmania]: "Tasmania",
 };
 
