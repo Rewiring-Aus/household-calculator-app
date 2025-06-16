@@ -37,7 +37,7 @@ export const defaultHouseholdData: Household = {
   },
   battery: {
     hasBattery: false,
-    capacity: 10,
+    capacity: 11,
     installBattery: true,
   },
 };
@@ -70,7 +70,7 @@ export const defaultFormState: HouseholdFormState = {
   },
   battery: {
     hasBattery: defaultHouseholdData?.battery?.hasBattery ?? false,
-    capacity: defaultHouseholdData?.battery?.capacity ?? 10,
+    capacity: defaultHouseholdData?.battery?.capacity ?? 11,
     installBattery: defaultHouseholdData?.battery?.installBattery ?? true,
     unit: "kWh",
   },
@@ -79,51 +79,87 @@ export const defaultFormState: HouseholdFormState = {
 // -----------------------------------------------------
 
 export const defaultSavingsData: Savings = {
-  emissions: {
-    perWeek: {
-      before: 71.16,
-      after: 15.18,
-      difference: -55.98,
+  "emissions": {
+    "perWeek": {
+      "before": 129.95,
+      "after": 58.39,
+      "difference": -71.56
     },
-    perYear: {
-      before: 3712.79,
-      after: 792.01,
-      difference: -2920.78,
+    "perYear": {
+      "before": 6780.69,
+      "after": 3046.94,
+      "difference": -3733.75
     },
-    overLifetime: {
-      before: 55691.83,
-      after: 11880.08,
-      difference: -43811.75,
+    "overLifetime": {
+      "before": 101710.37,
+      "after": 45704.14,
+      "difference": -56006.23
     },
-    operationalLifetime: 15,
+    "operationalLifetime": 15
   },
-  opex: {
-    perWeek: {
-      before: 103.47,
-      after: 69.63,
-      difference: -33.84,
+  "opex": {
+    "perWeek": {
+      "before": 136.03,
+      "after": 23.62,
+      "difference": -112.41
     },
-    perYear: {
-      before: 5936.81,
-      after: 3632.77,
-      difference: -2304.04,
+    "perYear": {
+      "before": 7097.76,
+      "after": 1232.21,
+      "difference": -5865.54
     },
-    overLifetime: {
-      before: 89199.13,
-      after: 54491.53,
-      difference: -34707.6,
+    "overLifetime": {
+      "before": 121837.13,
+      "after": 19400.12,
+      "difference": -102437.01
     },
-    operationalLifetime: 15,
+    "operationalLifetime": 15
   },
-  upfrontCost: {
-    solar: 15944.44,
-    battery: 10000,
-    cooktop: 2695,
-    waterHeating: 6999,
-    spaceHeating: 3778,
+  "upfrontCost": {
+    "solar": 15944.44,
+    "battery": 11000,
+    "cooktop": 2000,
+    "waterHeating": 0,
+    "spaceHeating": 0
   },
-  recommendation: {
-    action: "SOLAR",
-    url: "https://www.rewiring.nz/electrification-guides/solar",
+  "recommendation": {
+    "action": "SOLAR",
+    "url": "https://www.rewiringaustralia.org/report/factsheet-for-solar"
   },
+  "opexBefore": {
+    "gridVolumeCosts": 2045.6622495,
+    "otherEnergyCosts": 4343.093378567284,
+    "otherEnergyCostsByFuelType": {
+      "gas": 111.15178425,
+      "lpg": 0.0,
+      "wood": 0.0,
+      "petrol": 4231.941594317284,
+      "diesel": 0.0
+    },
+    "fixedCosts": 708.9999999999999,
+    "fixedCostsByFuelType": {
+      "gas": 243.99999999999997,
+      "lpg": 0,
+      "electricity": 465.0
+    },
+    "revenueFromSolarExport": -1.3642420526593923e-14
+  },
+  "opexAfter": {
+    "gridVolumeCosts": 821.1419304044985,
+    "otherEnergyCosts": 0.0,
+    "otherEnergyCostsByFuelType": {
+      "gas": 0.0,
+      "lpg": 0.0,
+      "wood": 0.0,
+      "petrol": 0.0,
+      "diesel": 0.0
+    },
+    "fixedCosts": 465.0,
+    "fixedCostsByFuelType": {
+      "gas": 0,
+      "lpg": 0,
+      "electricity": 465.0
+    },
+    "revenueFromSolarExport": 53.92820240137067
+  }
 };

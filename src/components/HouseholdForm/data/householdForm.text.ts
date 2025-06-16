@@ -185,7 +185,7 @@ const tooltipText: Record<string, string> = {
   hasBattery:
     "If you have a home battery, select Yes. If you don’t have a battery yet, select whether you would like to calculate your savings based on getting one. We currently only include battery calculations if you include solar.",
   batteryCapacity:
-    "The total size of your home battery system. 10 kWh is our default.",
+    "The total size of your home battery system. Aim to cover at least 1/3, ideally 2/3, of your energy usage taking into account when you mostly use energy. An average Australian household uses 16kWh of energy a day with 70% at night (so a 11kWh battery would cover most but not all needs).",
   vehicleNumber:
     "Select the number of vehicles that you use reasonably regularly.",
 };
