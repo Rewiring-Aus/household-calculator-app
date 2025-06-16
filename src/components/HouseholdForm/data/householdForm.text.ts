@@ -34,7 +34,7 @@ export const spaceHeatingMapping: Record<SpaceHeatingEnum, string> = {
   [SpaceHeatingEnum.ElectricResistance]:
     "Electric resistive heaters (e.g. oil column, fan, wall)",
   [SpaceHeatingEnum.Wood]: "Wood fire",
-  [SpaceHeatingEnum.Gas]: "Piped/natural gas heater",
+  [SpaceHeatingEnum.Gas]: "Gas heater",
   [SpaceHeatingEnum.Lpg]: "Bottled LPG heater",
   [SpaceHeatingEnum.Diesel]: "Diesel boiler",
   [SpaceHeatingEnum.None]: "No heating",
@@ -43,7 +43,7 @@ export const spaceHeatingMapping: Record<SpaceHeatingEnum, string> = {
 export const waterHeatingMapping: Record<WaterHeatingEnum, string> = {
   [WaterHeatingEnum.ElectricHeatPump]: "Hot water heat pump",
   [WaterHeatingEnum.ElectricResistance]: "Electric resistive",
-  [WaterHeatingEnum.Gas]: "Piped/natural gas",
+  [WaterHeatingEnum.Gas]: "Gas",
   [WaterHeatingEnum.Lpg]: "Bottled LPG",
   [WaterHeatingEnum.Solar]: "Solar hot water",
 };
@@ -51,7 +51,7 @@ export const waterHeatingMapping: Record<WaterHeatingEnum, string> = {
 export const cooktopMapping: Record<CooktopEnum, string> = {
   [CooktopEnum.ElectricInduction]: "Electric induction",
   [CooktopEnum.ElectricResistance]: "Electric resistive/ceramic",
-  [CooktopEnum.Gas]: "Piped/natural gas",
+  [CooktopEnum.Gas]: "Gas",
   [CooktopEnum.Lpg]: "Bottled LPG",
 };
 
