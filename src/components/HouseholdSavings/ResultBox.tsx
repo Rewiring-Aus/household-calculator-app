@@ -26,7 +26,7 @@ const ResultBox: React.FC<ResultBoxState> = ({
   paragraph,
   children,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <Box
