@@ -69,7 +69,7 @@ const VehicleBox = React.forwardRef<HTMLDivElement, VehicleBoxProps>((props, ref
     formState: { errors },
   } = useFormContext();
   const [, setSelectedUsageName] = useState<string | undefined>(undefined);
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(true);
 
   const handleUsageTypeChange = (selectedType: UsageType) => {
     setSelectedUsageName(selectedType);
@@ -103,7 +103,7 @@ const VehicleBox = React.forwardRef<HTMLDivElement, VehicleBoxProps>((props, ref
 
   return (
     <Box
-      ref={ref}  
+      ref={ref}
       className="VehicleBox"
       sx={{
         padding: "1rem 1rem",
