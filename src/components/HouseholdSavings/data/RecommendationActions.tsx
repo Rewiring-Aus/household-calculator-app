@@ -15,7 +15,7 @@ export const recommendationActions: Record<
 > = {
   [RecommendationActionEnum.SpaceHeating]: {
     getDescription: ({ currentSpaceHeater }) =>
-      `Swap out your ${currentSpaceHeater || "current heater"} for electric heat pumps.`,
+      `Swap out your ${currentSpaceHeater || "current heater"} for reverse cycle a/c.`,
     buttonText: "Show me how",
     imageComponent: (
       <StyledRecommendationImage type="heatPump" alt="Heat Pump" />
