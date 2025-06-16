@@ -1353,14 +1353,14 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
               <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
               <Typography />
               <Typography>
-                <Typography>Natural gas: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>Gas: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
                 <Typography>LPG: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
                 <Typography>Wood: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
                 <Typography>Petrol: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
                 <Typography>Diesel: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
               </Typography>
               <Typography>
-                <Typography>Natural gas: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>Gas: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
                 <Typography>LPG: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
                 <Typography>Electricity: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
               </Typography>
@@ -1387,14 +1387,14 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
               <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
               <Typography />
               <Typography>
-                <Typography>Natural gas: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>Gas: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
                 <Typography>LPG: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
                 <Typography>Wood: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
                 <Typography>Petrol: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
                 <Typography>Diesel: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
               </Typography>
               <Typography>
-                <Typography>Natural gas: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                <Typography>Gas: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
                 <Typography>LPG: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
                 <Typography>Electricity: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
               </Typography>
