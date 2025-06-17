@@ -50,9 +50,9 @@ const palette = {
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Roboto, Poppins, Rubik, sans-serif",
+    fontFamily: "Roboto, sans-serif",
     h1: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "2.125rem", // 16 * 2.125 = 34px
       fontWeight: 700,
       lineHeight: "2.55rem",
@@ -61,7 +61,7 @@ const theme = createTheme({
       color: "#222222",
     },
     h2: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.75rem", //28px    '1.5rem',  = 24px
       fontWeight: 700,
       lineHeight: "1.8rem", // 28.8px
@@ -69,7 +69,7 @@ const theme = createTheme({
       // letterSpacing: '0.022rem'
     },
     h3: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.0625rem", // = 17px
       fontWeight: 600,
       lineHeight: "1.2rem", // 19px
@@ -78,7 +78,7 @@ const theme = createTheme({
       color: "#3A3A3A",
     },
     h4: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.0625rem", // 17px
       fontWeight: 600,
       // lineHeight: '0.75rem',
@@ -87,7 +87,7 @@ const theme = createTheme({
       color: "#000000",
     },
     h5: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1rem",
       fontWeight: 600,
       // lineHeight: '0.75rem',
@@ -95,14 +95,14 @@ const theme = createTheme({
       // letterSpacing: '.04rem'
     },
     h6: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "0.81rem", // 12.96px   '0.75rem',
       fontWeight: 700,
       lineHeight: "0.94rem",
       letterSpacing: ".04rem", // required
     },
     subtitle1: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.3125rem", // 21px // 16 * 1.25 = 20px
       fontWeight: 400,
       lineHeight: "1.7rem",
@@ -110,25 +110,25 @@ const theme = createTheme({
       color: "#3A3A3A",
     },
     subtitle2: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.1875rem", // 19px //  1.125rem = 18px
       fontWeight: 400,
       lineHeight: "1.6rem",
     },
     body1: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1.0625rem", // 17px
       fontWeight: 400,
       lineHeight: "1.49rem",
     },
     body2: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "1rem", // 0.94rem  ~15px
       fontWeight: 400,
       lineHeight: "1.22rem",
     },
     caption: {
-      fontFamily: "Rubik, Roboto, sans-serif",
+      fontFamily: "Roboto, sans-serif",
       fontSize: "0.9rem", // 0.94rem  ~15px  '0.75rem',
       fontWeight: 400,
       lineHeight: "1.3125rem",
