@@ -84,6 +84,7 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
   savingsData,
 }) => {
   const theme = useTheme();
+  const [showOpexBreakdown, setShowOpexBreakdown] = useState(false);
 
   // ------------- Tooltip -------------------
   const tooltipText = formText.tooltipText;
@@ -1329,76 +1330,110 @@ const HouseholdForm: React.FC<HouseholdFormProps> = ({
           </FormBox>
           <FormBox theme={theme} className="formBox">
             <FDivider />
-            <Typography variant="h3" sx={{ marginBottom: "1rem" }}>Annual Opex Costs</Typography>
-            <FormSectionGrid
-              theme={theme}
+            <Typography
+              variant="h3"
               sx={{
-                backgroundColor: theme.palette.background.paper,
-                padding: "1rem",
-                borderRadius: "4px",
                 marginBottom: "1rem",
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: "1rem",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "underline",
+                "&:hover": {
+                  color: theme.palette.primary.main
+                }
               }}
+              onClick={() => setShowOpexBreakdown(!showOpexBreakdown)}
             >
-              <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>Before</Typography>
-              <Typography>Grid Volume Costs</Typography>
-              <Typography>Other Energy Costs</Typography>
-              <Typography>Fixed Costs</Typography>
-              <Typography>Solar Export Revenue</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.gridVolumeCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.otherEnergyCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.fixedCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
-              <Typography />
-              <Typography>
-                <Typography>Gas: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
-                <Typography>LPG: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
-                <Typography>Wood: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
-                <Typography>Petrol: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
-                <Typography>Diesel: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
-              </Typography>
-              <Typography>
-                <Typography>Gas: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
-                <Typography>LPG: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
-                <Typography>Electricity: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
-              </Typography>
-            </FormSectionGrid>
-            <FormSectionGrid
-              theme={theme}
-              sx={{
-                backgroundColor: theme.palette.background.paper,
-                padding: "1rem",
-                borderRadius: "4px",
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: "1rem",
-              }}
-            >
-              <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>After</Typography>
-              <Typography>Grid Volume Costs</Typography>
-              <Typography>Other Energy Costs</Typography>
-              <Typography>Fixed Costs</Typography>
-              <Typography>Solar Export Revenue</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.gridVolumeCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.otherEnergyCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.fixedCosts || 0) / 100) * 100}</Typography>
-              <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
-              <Typography />
-              <Typography>
-                <Typography>Gas: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
-                <Typography>LPG: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
-                <Typography>Wood: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
-                <Typography>Petrol: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
-                <Typography>Diesel: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
-              </Typography>
-              <Typography>
-                <Typography>Gas: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
-                <Typography>LPG: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
-                <Typography>Electricity: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
-              </Typography>
-            </FormSectionGrid>
+              Annual opex costs breakdown
+            </Typography>
+            {showOpexBreakdown && (
+              <Box
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  padding: "1rem",
+                  borderRadius: "8px",
+                  marginBottom: "1rem",
+                  width: "100%",
+                  boxSizing: "border-box"
+                }}
+              >
+                <FormSectionGrid
+                  theme={theme}
+                  sx={{
+                    backgroundColor: theme.palette.background.paper,
+                    padding: "1rem",
+                    borderRadius: "4px",
+                    marginBottom: "1rem",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4, 1fr)",
+                    gap: "1rem",
+                    width: "100%",
+                    boxSizing: "border-box"
+                  }}
+                >
+                  <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>Current household</Typography>
+                  <Box sx={{ gridColumn: "1 / -1", borderBottom: `1px solid ${theme.palette.divider}`, marginBottom: "0.5rem" }} />
+                  <Typography>Grid electricity cost</Typography>
+                  <Typography>Fuel cost</Typography>
+                  <Typography>Fixed cost</Typography>
+                  <Typography>Solar export revenue</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.gridVolumeCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.otherEnergyCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.fixedCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexBefore?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
+                  <Typography />
+                  <Typography>
+                    <Typography>Gas: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                    <Typography>LPG: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                    <Typography>Wood: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
+                    <Typography>Petrol: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
+                    <Typography>Diesel: ${Math.round((savingsData?.opexBefore?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
+                  </Typography>
+                  <Typography>
+                    <Typography>Gas: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                    <Typography>LPG: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                    <Typography>Electricity: ${Math.round((savingsData?.opexBefore?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
+                  </Typography>
+                </FormSectionGrid>
+                <FormSectionGrid
+                  theme={theme}
+                  sx={{
+                    backgroundColor: theme.palette.background.paper,
+                    padding: "1rem",
+                    borderRadius: "4px",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4, 1fr)",
+                    gap: "1rem",
+                    width: "100%",
+                    boxSizing: "border-box"
+                  }}
+                >
+                  <Typography sx={{ fontWeight: "bold", gridColumn: "1 / -1" }}>After electrifying</Typography>
+                  <Box sx={{ gridColumn: "1 / -1", borderBottom: `1px solid ${theme.palette.divider}`, marginBottom: "0.5rem" }} />
+                  <Typography>Grid electricity cost</Typography>
+                  <Typography>Fuel cost</Typography>
+                  <Typography>Fixed cost</Typography>
+                  <Typography>Solar export revenue</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.gridVolumeCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.otherEnergyCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.fixedCosts || 0) / 100) * 100}</Typography>
+                  <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>${Math.round((savingsData?.opexAfter?.revenueFromSolarExport || 0) / 100) * 100}</Typography>
+                  <Typography />
+                  <Typography>
+                    <Typography>Gas: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                    <Typography>LPG: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                    <Typography>Wood: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.wood || 0) / 100) * 100}</Typography>
+                    <Typography>Petrol: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.petrol || 0) / 100) * 100}</Typography>
+                    <Typography>Diesel: ${Math.round((savingsData?.opexAfter?.otherEnergyCostsByFuelType?.diesel || 0) / 100) * 100}</Typography>
+                  </Typography>
+                  <Typography>
+                    <Typography>Gas: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.gas || 0) / 100) * 100}</Typography>
+                    <Typography>LPG: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.lpg || 0) / 100) * 100}</Typography>
+                    <Typography>Electricity: ${Math.round((savingsData?.opexAfter?.fixedCostsByFuelType?.electricity || 0) / 100) * 100}</Typography>
+                  </Typography>
+                </FormSectionGrid>
+              </Box>
+            )}
           </FormBox>
         </FormContainer>
       </form>
