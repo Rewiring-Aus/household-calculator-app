@@ -195,6 +195,7 @@ const Home: React.FC = () => {
               variant="caption"
               sx={{
                 lineHeight: "1.625rem",
+                paddingTop: "1rem"
               }}
             >
               © Copyright{" "}
