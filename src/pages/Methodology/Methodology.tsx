@@ -164,9 +164,10 @@ const Methodology: React.FC = () => {
                 href="https://www.abs.gov.au/statistics/industry/tourism-and-transport/survey-motor-vehicle-use-australia/12-months-ended-30-june-2018#data-download"
                 target="_blank"
               >
-                Australian Bureau of Statistics (ABS) Survey Motor Vehicle Survey use 2018
+                Australian Bureau of Statistics (ABS) Survey Motor Vehicle Survey
               </Link>
-              , using 2018 data to avoid COVID anomalies. 
+              , using 2018 data to avoid COVID anomalies. We assume the average Australian driver drives 255 km per week, then scale this based on each vehicle's stated usage (kilometres driven per year).
+
             </Typography>
             <Typography variant="body2">
               Solar energy generation is modeled based on panel size, location,
@@ -218,8 +219,7 @@ const Methodology: React.FC = () => {
               savings over 15 years consider future price inflation.
             </Typography>
             <Typography variant="body2">
-              Fixed costs (like gas, LPG, or grid connections) and Road User
-              Charges are added. Vehicle maintenance/servicing costs are not yet
+              Fixed costs (like gas, LPG, or grid connections) are added. Vehicle maintenance/servicing costs are not yet
               included, although they tend to be lower for EVs. Solar export
               revenue is then subtracted from the bills to get total operating
               costs. Learn more about our sister org Rewiring Aotearoa's advocacy on fair solar export
@@ -272,7 +272,7 @@ const Methodology: React.FC = () => {
               normally be losing $30k-$70k outright for every EV you buy.
             </Typography>
             <Typography variant="body2">
-              Solar pricing is derived from the state and territory pricing from https://www.solarchoice.net.au/solar-panels/solarpower-system-prices/, accessed January 2025. Per kWh pricing is determined by calculating the lifetime generation of the solar panels over 30 years, solar panels now come warrantied often and 25 or 30 years, and up to 40 years (https://sunpower.maxeon.com/int/solar-panel-products/warranty). One replacement inverter is included at $2,000. Degradation is assumed at 0.5% per year
+              The upfront cost of solar installation is estimated at $950/kW, based on 2026 data from the Solar Choice. Inverter upgrade costs are assumed at $2,000. Battery costs are estimated at $950/kWh based on similar sources. Again, installation costs will vary by region and installer.
             </Typography>
             <Typography variant="h2">Recommendations (Next Steps)</Typography>
             <Typography variant="body2">
